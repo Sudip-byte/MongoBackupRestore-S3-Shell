@@ -9,8 +9,8 @@ const AdmZip = require("adm-zip");
 //ENV VARS
 const bucketName = "mongo-backup-poc"
 const region = "ap-south-1"
-const accessKeyId = "AKIASTPBLAE2BEKFC5EA"
-const secretAccessKey = "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"
+const accessKeyId = ""
+const secretAccessKey = ""
 
 const s3 = new AWS.S3({
     accessKeyId: accessKeyId,
