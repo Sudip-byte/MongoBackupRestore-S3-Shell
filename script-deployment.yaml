@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: script-deployment
+spec:
+  selector:
+    matchLabels:
+      app: script-k8s-mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: script-k8s-mongo
+    spec:
+      containers:
+        - name: script-k8s
+          image: 7682080176/script-k8s
+---
+
+apiVersion: v1 # Kubernetes API version
+kind: Service # Kubernetes resource kind we are creating
+metadata: # Metadata of the resource kind we are creating
+  name: script-svc
+spec:
+  selector:
+    app: script-k8s-mongo
+  ports:
+    - protocol: "TCP"
+      port: 8080 # The port that the service is running on in the cluster
+      targetPort: 8080 # The port exposed by the service
+  type: NodePort # type of the service.

@@ -20,7 +20,8 @@ let backupProcess = spawn('mongorestore', [
     '--verbose',
     '--host=localhost',
     '--port=27017',
-    'dump_extracted'
+    '--drop',
+    '2022-08-11'
     ]);
 
 backupProcess.on('exit', (code, signal) => {

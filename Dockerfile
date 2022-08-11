@@ -7,5 +7,5 @@ WORKDIR /usr/app
 
 COPY . /usr/app/
 
-#CMD ["bash", "script.sh" ]
-CMD ["node", "script.js" ]
+CMD ["bash", "sequential-exec.sh" ]
+#CMD ["node", "restore.js" ]
