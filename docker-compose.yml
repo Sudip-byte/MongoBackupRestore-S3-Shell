@@ -13,7 +13,7 @@ services:
   
   script:
     container_name: script
-    restart: on-failure
+    restart: 'no'
     build: 
       dockerfile: Dockerfile
     image: script-task
